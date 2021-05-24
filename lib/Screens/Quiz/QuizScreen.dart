@@ -73,8 +73,6 @@ class _QuizScreenState extends State<QuizScreen> {
     String correctAnswer = quizHelper.results[currentQuestion].correctAnswer;
     if (correctAnswer == answer) {
       score += 1;
-    } else {
-      print("Wrong");
     }
     changeQuestion();
   }
@@ -170,14 +168,15 @@ class _QuizScreenState extends State<QuizScreen> {
                           margin: EdgeInsets.symmetric(
                             vertical: 10,
                           ),
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
                               checkAnswer(option);
                             },
-                            color: Color(0XFF511AA8),
-                            colorBrightness: Brightness.dark,
-                            padding: EdgeInsets.symmetric(
-                              vertical: 20,
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 20,
+                              ),
+                              primary: Color(0XFF511AA8),
                             ),
                             child: Text(
                               option,
